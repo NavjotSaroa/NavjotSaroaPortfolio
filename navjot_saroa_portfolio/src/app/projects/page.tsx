@@ -54,7 +54,7 @@ export default function ProjectsPage() {
                 feature extrapolation, and strategy prediction.
               </li>
               <li>
-                Phase 1: Collected race car telemetry from F1 23's UDP broadcast of telemetry data at 120 Hz. This data was collected,
+                Phase 1: Collected race car telemetry from F1 23&apos;s UDP broadcast of telemetry data at 120 Hz. This data was collected,
                 processed, and stored in a SQLite3 table.
               </li>
               <li>
@@ -82,7 +82,7 @@ export default function ProjectsPage() {
               <li>Project manager and data scientist; leading a team of 4.</li>
               <li>
                 Designed a website where users could access race telemetry data of real-life F1 drivers, and compare their own
-                driving in the F1 game series to their's.
+                driving in the F1 game series to their&apos;s.
               </li>
               <li>
                 Harnessed the power of AI (ChatGPT 4o) to design a race engineer that gave feedback to the user on how to improve over the lap.
