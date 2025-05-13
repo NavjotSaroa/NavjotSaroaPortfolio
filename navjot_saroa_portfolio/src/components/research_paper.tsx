@@ -22,10 +22,11 @@ export default function F1AIStrat() {
 
   return (
     <motion.section
-      ref={ref}
-      className="h-[350vh] relative"
-      style={{ backgroundColor }}
-    >
+  ref={ref}
+  className="relative h-[350vh] sm:h-[250vh] md:h-[300vh] lg:h-[350vh]"
+  style={{ backgroundColor }}
+>
+
       <div className="sticky top-0 h-screen flex items-center justify-center">
         <div className="container mx-auto flex items-center justify-between w-full px-12">
         <motion.div
@@ -42,7 +43,7 @@ export default function F1AIStrat() {
 
           <motion.div style={{ x: imageX, opacity }} className="w-1/2">
           <iframe
-            src="/Saroa_30193854 (1).pdf"
+            src="/Saroa_30193854.pdf"
             className="w-full h-[600px]"
             title="PDF preview"
             />

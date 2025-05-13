@@ -6,16 +6,17 @@ import Navbar from '../components/navbar';
 
 export default function HomePage() {
   return (
-    <main>
-      <Navbar />
-      <section className="h-screen">
-        <Home />
-      </section>
+      <main className="relative z-0">
+        <Navbar />
+        <section id="home" className="h-screen">
+          <Home />
+        </section>
 
-      {/* Each project gets its own section */}
-      <F1AIStrat />
-      <BonoGPT />
-      <ResearchPaper />
-    </main>
+        <F1AIStrat />
+        <BonoGPT />
+        <ResearchPaper />
+      </main>
+
   );
 }
+
