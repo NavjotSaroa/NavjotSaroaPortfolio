@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -16,9 +17,9 @@ export default function F1AIStrat() {
     ['#ffffff', '#000000', '#000000', '#000000']
   );
   
-  const textX = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6], ['100%', '85%', '85%', '85%']);
-  const imageX = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6], ['-100%', '-95%', '-95%', '-95%']);
-  const opacity = useTransform(scrollYProgress, [0.05, 0.2, 0.35, 0.9], [0, 1, 1, 0]);
+  const textX = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1], ['200%', '125%', '125%', '125%', '125%', '200%', "200%"]);
+  const imageX = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1], ['-200%', '-95%', '-95%', '-95%', '-95%', '-200%', '-200%']);
+  const opacity = useTransform(scrollYProgress, [0.05, 0.2, 0.35, 0.6, 0.7], [0, 1, 1, 1, 0]);
 
   return (
     <motion.section
@@ -29,17 +30,22 @@ export default function F1AIStrat() {
 
       <div className="sticky top-0 h-screen flex items-center justify-center">
         <div className="container mx-auto flex items-center justify-between w-full px-12">
-        <motion.div
-  style={{ x: textX, opacity, color: '#ffffff' }}
-  className="w-1/2 flex justify-end pr-4"
+        <motion.div style={{ x: textX, opacity, color: '#ffffff' }} className="w-1/2 max-w-[400px] text-right ml-auto">
+          <h2 className="text-4xl font-bold mb-4">
+          <Link
+  href="/projects#bono-gpt"
+  style={{
+    textDecoration: 'underline',
+    textDecorationColor: '#60a5fa', // Tailwind's blue-400
+    textDecorationThickness: '2px'
+  }}
+  className="text-blue-400 underline-offset-4 transition-colors duration-200 cursor-pointer"
 >
-  <div className="max-w-[500px] text-right">
-    <h2 className="text-4xl font-bold mb-4">Research Paper</h2>
-    <p className="text-lg">
-      Study of the benefits and costs of using AI for microservices architecture.
-    </p>
-  </div>
-</motion.div>
+  Research Paper
+</Link>
+          </h2>
+          <p className="text-lg">Study of the benefits and costs of using AI for microservices architecture.</p>
+          </motion.div>
 
           <motion.div style={{ x: imageX, opacity }} className="w-1/2">
           <iframe

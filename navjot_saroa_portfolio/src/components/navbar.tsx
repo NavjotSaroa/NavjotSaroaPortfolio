@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,18 +28,18 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex space-x-6">
-          <a href="#home" className="text-white hover:underline">Home</a>
-          <a href="#f1" className="text-white hover:underline">About Me</a>
-          <a href="#bono" className="text-white hover:underline">Projects</a>
+        <Link href="/" className="text-white hover:underline">Home</Link>
+        <Link href="/projects" className="text-white hover:underline">Projects</Link>
+        <Link href="/about" className="text-white hover:underline">About Me</Link>    
         </div>
       </div>
 
       {/* Mobile Dropdown Links */}
       <div className={`md:hidden ${isOpen ? 'flex' : 'hidden'} flex-col items-end px-4 pb-4 w-full bg-[#1a1a1a]`}>
-        <a href="#home" className="block py-2 text-white hover:underline">Home</a>
-        <a href="#f1" className="block py-2 text-white hover:underline">About Me</a>
-        <a href="#bono" className="block py-2 text-white hover:underline">Projects</a>
-      </div>
+        <Link href="/" className="text-white hover:underline">Home</Link>
+        <Link href="/projects" className="text-white hover:underline">Projects</Link>
+        <Link href="/about" className="text-white hover:underline">About Me</Link>
+    </div>
     </nav>
   );
 }

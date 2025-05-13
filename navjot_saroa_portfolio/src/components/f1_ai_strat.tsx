@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import Image from 'next/image';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -17,9 +18,9 @@ export default function F1AIStrat() {
     ['#000000', '#000000', '#000000', '#000000']
   );
 
-  const textX = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6], ['100%', '75%', '75%', '75%']);
-  const imageX = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.6], ['-100%', '-95%', '-95%', '-95%']);
-  const opacity = useTransform(scrollYProgress, [0.05, 0.2, 0.35, 0.9], [0, 1, 1, 0]);
+  const textX = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1], ['200%', '125%', '125%', '125%', '125%', '200%', "200%"]);
+  const imageX = useTransform(scrollYProgress, [0, 0.2, 0.4, 0.5, 0.6, 0.8, 1], ['-200%', '-95%', '-95%', '-95%', '-95%', '-200%', '-200%']);
+  const opacity = useTransform(scrollYProgress, [0.05, 0.2, 0.35, 0.6, 0.7], [0, 1, 1, 1, 0]);
 
   return (
     <motion.section
@@ -29,10 +30,22 @@ export default function F1AIStrat() {
         >
 
       <div className="sticky top-0 h-screen flex items-center justify-center">
-        <div className="container mx-auto flex items-center justify-between w-full px-12">
-          <motion.div style={{ x: textX, opacity, color: '#ffffff' }} className="w-1/2 text-right">
-            <h2 className="text-4xl font-bold mb-4">F1 AI Strat</h2>
-            <p className="text-lg">Let your AI engineer focus on the pit strategy while you race</p>
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between w-full px-12 gap-8">
+          <motion.div style={{ x: textX, opacity, color: '#ffffff' }} className="w-1/2 max-w-[400px] text-right ml-auto">
+          <h2 className="text-4xl font-bold mb-4">
+          <Link
+  href="/projects#f1-ai-strat"
+  style={{
+    textDecoration: 'underline',
+    textDecorationColor: '#60a5fa', // Tailwind's blue-400
+    textDecorationThickness: '2px'
+  }}
+  className="text-blue-400 underline-offset-4 transition-colors duration-200 cursor-pointer"
+>
+  F1 Strategy Generator
+</Link>
+          </h2>
+          <p className="text-lg">Let your AI engineer focus on the pit strategy while you race. Click on link to learn more!</p>
           </motion.div>
 
           <motion.div style={{ x: imageX, opacity }} className="w-1/2">
