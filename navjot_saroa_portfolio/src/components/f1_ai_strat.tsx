@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
@@ -34,7 +35,7 @@ export default function F1AIStrat() {
           </motion.div>
 
           <motion.div style={{ x: imageX, opacity }} className="w-1/2">
-            <img src="/f1-car.png" alt="F1 Project" className="w-full" />
+            <Image src="/f1-car.png" alt="F1 Project" className="w-full" />
           </motion.div>
         </div>
       </div>
